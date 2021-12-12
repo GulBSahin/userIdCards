@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-// import UserId from './UserId'
+
 
 
 const Users = () => {
@@ -11,18 +11,7 @@ const Users = () => {
     const [userPhone, setUserPhone]=useState();
     const [userWebsite, setUserWebsite]=useState();
     const [companyName, setCompanyName]=useState();
-    //Get users with axios works with button-onclick 
-    // const getUsers=()=>{
-    //     axios.get("https://jsonplaceholder.typicode.com/users")
-    //     .then((response)=> setUsers(response.data)).catch((err)=>  console.log(err) ) //with axios responsewe need to use .data 
-    // }
     
-    //Get users with fetch 
-    // const getUsers=()=>{
-    //     fetch('https://jsonplaceholder.typicode.com/users')
-    //     .then(response => response.json())
-    //     .then(data => setUsers(data))  //set data as array to users
-    //     .catch((err) => console.log(err))
     
     useEffect(()=>{
         axios.get("https://jsonplaceholder.typicode.com/users")
@@ -31,8 +20,7 @@ const Users = () => {
     return (
         <div>
             <h2>Developer Team</h2>
-            {/* <UserId person={users} id={userId}/> */}
-            
+                       
             <div class="userContainer">
             <div class="venus"  >
                 <div class="teen"> USER ID CARD </div>
@@ -49,7 +37,6 @@ const Users = () => {
             </div> 
         </div>
         <h3>Click to see more</h3>
-            {/* <button onClick={getUsers}>Get Users</button> */}
             <div className="users-cards"> 
                 {users.map((user) =>(
                     <div className="useritem" key={user.id} onClick={()=>{setUserId(user.id);setUserName(user.name);setUserEmail(user.email);setUserPhone(user.phone);setUserWebsite(user.website);setCompanyName(user.company.name)}}>
